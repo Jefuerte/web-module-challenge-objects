@@ -15,10 +15,16 @@ The function should:
   Example createMenuItem('tacos', 8, 'Lunch') should return {name: 'tacos', price: 8, category: 'Lunch'}
 */
 
-function createMenuItem(/*Your code here*/){
-    /*Your code here*/
+function createMenuItem(name, price, category){
+    const newFood = {
+      name,
+      price,
+      category
+    }
+    return newFood
 }
-
+const newFood = createMenuItem('tacos', 8, 'lunch')
+console.log(createMenuItem('tacos', 8, 'lunch'))
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 1b: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Invoke your function!
 Test your createMenuItems function by doing the following:
@@ -28,7 +34,9 @@ Test your createMenuItems function by doing the following:
   
   For example: createMenuItem("pizza",5,"lunch") would return this as the object: {name:"Pizza",price:5,category:"lunch"}
 */
-
+console.log(createMenuItem('pizza', 5, 'lunch'))
+console.log(createMenuItem('pancakes', 7, 'breakfast'))
+console.log(createMenuItem('steak', 12, 'dinner'))
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -47,9 +55,17 @@ const burger = {
   name: "Burger", 
   price: 18, 
   category: "Lunch", 
-  
+  discount: function(person){
+    if(person === "teacher" || person === "student"){
+      return this.price - (this.price * .25)
+    }else if(person === "public"){
+      return this.price - (this.price * .10)
+    }
+  }
 }
-
+console.log(burger.discount("teacher"))
+console.log(burger.discount("student"))
+console.log(burger.discount("public"))
 
 
 ///////////////Reviews (MVP)///////////////////
@@ -63,7 +79,7 @@ const reviews = [
     {name: "Lauren", rating: 4, feedback: "Absolutely love that they have karaoke Fridays! Food and drink selection is okay."},
     {name: "Reyna", rating: 3.5, feedback: ""},
 ]
-
+console.log(reviews[5].feedback)
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Using the reviews array above:
   1. log only Julius' feedback to the console - no function needed 
